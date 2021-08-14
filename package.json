@@ -1,0 +1,27 @@
+{
+  "name": "orbiseedcodetest",
+  "version": "1.0.0",
+  "description": "Code test for Orbiseed",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha 'test/**/*.js'"
+  },
+  "keywords": [
+    "json",
+    "endpoint",
+    "node"
+  ],
+  "author": "haopeng jiang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.0.3",
+    "nodemon": "^2.0.12"
+  }
+}
