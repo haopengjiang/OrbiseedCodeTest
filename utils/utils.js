@@ -26,11 +26,12 @@ module.exports.filterYearOrPrice = function (data, type, propertyName) {
 				data = data.filter((car) => car[propertyName] <= highest);
 			}
 		} else if (Array.isArray(type)) {
-			let lowest = findValueWithLabel(type,'min');
-			let highest = findValueWithLabel(type,'max');
+			let lowest = findValueWithLabel(type, "min");
+			let highest = findValueWithLabel(type, "max");
 
 			data = data.filter(
-				(car) => car[propertyName] <= highest && car[propertyName] >= lowest
+				(car) =>
+					car[propertyName] <= highest && car[propertyName] >= lowest
 			);
 		}
 	}
@@ -67,7 +68,7 @@ const sortAsc = function (data, type) {
 	});
 };
 
-const findValueWithLabel = function (arr,label) {
+const findValueWithLabel = function (arr, label) {
 	return parseInt(
 		arr
 			.map((str) => ({
@@ -77,6 +78,5 @@ const findValueWithLabel = function (arr,label) {
 			.find((obj) => obj.type === label).value
 	);
 };
-
 
 module.exports.findValueWithLabel = findValueWithLabel;
