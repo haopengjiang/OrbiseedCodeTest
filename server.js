@@ -16,3 +16,11 @@ const routes = require("./routes/routes.js")(app, fs);
 const server = app.listen(3000, () => {
   console.log("listening on port %s...", server.address().port);
 });
+
+process.on("unhandledRejection", function (reason, promise) {
+  console.log("unhandled Rejection at: promise", promise, "reason:", reason);
+});
+
+process.on("uncaughtException", function (err) {
+  console.log("uncaught Exception at: ", err);
+});
